@@ -1,5 +1,10 @@
-import add from "@add";
+import add from "../src/add";
 
-it("Adds 2 numbers", () => {
-	expect(add(1, 2)).toBe(3);
+describe("add function", () => {
+	it("Adds 2 numbers", () => {
+		expect(add(1, 2)).toBe(3);
+	});
+	it("Adds 2 strings", () => {
+		expect(add("foo", "bar")).toBe("foobar");
+	});
 });
