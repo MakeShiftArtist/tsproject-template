@@ -4,7 +4,21 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 
-## 1.0.0
+## [v1.1.0](https://github.com/MakeShiftArtist/tsproject-template/compare/v1.1.0...v1.1.0)
+
+
+
+
+
+
+## [v1.1.0](https://github.com/MakeShiftArtist/tsproject-template/compare/v1.0.0...v1.1.0) - 2022-05-24
+
+
+
+
+
+
+## v1.0.0 - 2022-05-24
 
 
 
