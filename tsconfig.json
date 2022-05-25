@@ -12,5 +12,6 @@
 		"paths": {
 			"@add": ["src/add"]
 		}
-	}
+	},
+	"include": ["./src/**/*"]
 }
