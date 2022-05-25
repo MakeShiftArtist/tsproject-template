@@ -4,12 +4,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 
-## 0.1.0
+## 1.0.0
 
 
 
 ### Bug Fixes
 
+- Fix: [Docs] Updated CHANGELOG.md [`#Fix:`](https://github.com/MakeShiftArtist/tsproject-template/issues/Fix:)
 - Fix: Improved add.test.ts structure [`#Fix:`](https://github.com/MakeShiftArtist/tsproject-template/issues/Fix:)
 - Fix: Removed tests from compilation [`#Fix:`](https://github.com/MakeShiftArtist/tsproject-template/issues/Fix:)
 - Fix: Removed tests from type declarations [`#Fix:`](https://github.com/MakeShiftArtist/tsproject-template/issues/Fix:)
