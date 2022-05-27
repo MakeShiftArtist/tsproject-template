@@ -1,44 +1,22 @@
 # Changelog
-
-All notable changes to this project will be documented in this file.
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
-
+- This Changelog adheres to the [SemVer]("https://semver.org/") version schem
 
 {{#each releases}}
-  {{#if href}}
-    ## [{{title}}]({{href}}){{#if tag}} - {{isoDate}}{{/if}}
-  {{else}}
-    ## {{title}}{{#if tag}} - {{isoDate}}{{/if}}
-  {{/if}}
+# {{title}} [{{isoDate}}]
 
-  {{#if summary}}
-    {{summary}}
-  {{/if}}
+{{! lit commits with feature: in message, use feature: or Feature: }}
+{{#commit-list commits heading='### Features' message='[Ff]eat:' exclude='[Ff]ix:|[Bb]reak:'}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
 
-  {{#if merges}}
-    ### Merged
+{{! use fix: or Fix: }}
+{{#commit-list commits heading='### Fixes' message='[Ff]ix:' exclude='[Bb]reak:|[Ff]eat:'}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
 
-    {{#each merges}}
-      - {{#if commit.breaking}}**Breaking change:** {{/if}}{{message}} {{#if href}}[`#{{id}}`]({{href}}){{/if}}
-    {{/each}}
-  {{/if}}
-
-  {{#if fixes}}
-    ### Bug Fixes
-
-    {{#each fixes}}
-      - {{#if commit.breaking}}**Breaking change:** {{/if}}{{commit.subject}}{{#each fixes}} {{#if href}}[`#{{id}}`]({{href}}){{/if}}{{/each}}
-    {{/each}}
-  {{/if}}
-
-  {{! List commits with `Breaking change: ` somewhere in the message }}
-  {{#commit-list commits heading='### Breaking Changes' message='Breaking change: '}}
-    - {{subject}} [`{{shorthash}}`]({{href}})
-  {{/commit-list}}
-
-  {{! List commits that add new features, but not those already listed above }}
-  {{#commit-list commits heading='### New Features' message='feat: ' exclude='Breaking change: '}}
-    - {{subject}} [`{{shorthash}}`]({{href}})
-  {{/commit-list}}
+{{! user break: or Break: }}
+{{#commit-list commits heading='### Breaking changes' message='[Bb]reak:' exclude='[Ff]ix:|(Feature: )|(feature: )'}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
 
 {{/each}}
