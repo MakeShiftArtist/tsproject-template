@@ -1,22 +1,28 @@
 # Changelog
-- This Changelog adheres to the [SemVer]("https://semver.org/") version schem
+- This Changelog adheres to the [SemVer]("https://semver.org/") version scheme
 
 {{#each releases}}
 # {{title}} [{{isoDate}}]
 
-{{! lit commits with feature: in message, use feature: or Feature: }}
-{{#commit-list commits heading='### Features' message='[Ff]eat:' exclude='[Ff]ix:|[Bb]reak:'}}
+{{! New features. Minor release }}
+{{#commit-list commits heading='### Features' message='[Ff]eat:' exclude='[Ff]ix:|[Bb]reak:|[Dd]oc:'}}
 * {{subject}} ([`{{shorthash}}`]({{href}}))
 {{/commit-list}}
 
-{{! use fix: or Fix: }}
-{{#commit-list commits heading='### Fixes' message='[Ff]ix:' exclude='[Bb]reak:|[Ff]eat:'}}
+{{! Bug fixes. Patch release }}
+{{#commit-list commits heading='### Fixes' message='[Ff]ix:' exclude='[Bb]reak:|[Ff]eat:|[Dd]oc:'}}
 * {{subject}} ([`{{shorthash}}`]({{href}}))
 {{/commit-list}}
 
-{{! user break: or Break: }}
-{{#commit-list commits heading='### Breaking changes' message='[Bb]reak:' exclude='[Ff]ix:|(Feature: )|(feature: )'}}
+{{! Breaking changes. Major release }}
+{{#commit-list commits heading='### Breaking changes' message='[Bb]reak:' exclude='[Ff]ix:|[Ff]eat:|[Dd]oc:'}}
 * {{subject}} ([`{{shorthash}}`]({{href}}))
 {{/commit-list}}
+
+{{! Changes to the documentation: Patch release }}
+{{#commit-list commits heading='### Documentation' message='[Dd]oc:' exclude='[Ff]ix:|[Bb]reak:|[Ff]eat:'}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
+
 
 {{/each}}
