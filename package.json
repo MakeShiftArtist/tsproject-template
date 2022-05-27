@@ -6,10 +6,10 @@
 	"types": "index.d.ts",
 	"scripts": {
 		"test": "jest",
-		"version": "auto-changelog -p && git add CHANGELOG.md",
-		"compile": "tsc",
+		"changelog": "auto-changelog -p",
+		"changelog-debug": "auto-changelog -p --template json --output changelog-data.json",
 		"type": "tsc --declaration --emitDeclarationOnly --outFile index.d.ts",
-		"build": "npm run compile && npm run type"
+		"build": "npx tsc && npm run type"
 	},
 	"repository": {
 		"type": "git",
@@ -36,15 +36,14 @@
 		"typescript": "^4.7.2"
 	},
 	"auto-changelog": {
-		"output": "CHANGELOG.md",
 		"template": "changelog-template.hbs",
-		"breakingPattern": "^\\S+\\!\\:",
-		"issuePattern": "^[Ff][Ii][Xx]\\:",
+		"hideEmptyReleases": true,
+		"commitLimit": false,
+		"unreleased": true,
 		"replaceText": {
-			"^[Ff][Ii][Xx]\\:": "Fix:",
-			"^[Ff][Ii][Xx]\\!\\:": "Fix!:",
-			"[Ff][Ee][Ae][Tt]\\:": "Feat:",
-			"[Ff][Ee][Ae][Tt]\\!\\:": "Feat!:"
+			"[Ff]eat:": "",
+			"[Ff]ix:": "",
+			"[Bb]reak:": ""
 		}
 	}
 }
