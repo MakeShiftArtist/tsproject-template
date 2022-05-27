@@ -43,7 +43,8 @@
 		"replaceText": {
 			"[Ff]eat:": "",
 			"[Ff]ix:": "",
-			"[Bb]reak:": ""
+			"[Bb]reak:": "",
+			"[Dd]oc:": ""
 		}
 	}
 }
